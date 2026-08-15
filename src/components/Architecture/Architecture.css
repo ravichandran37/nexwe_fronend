@@ -1,0 +1,91 @@
+.text-center {
+  text-align: center;
+}
+
+.eyebrow.text-center {
+  justify-content: center;
+}
+
+.eyebrow.text-center::before,
+.eyebrow.text-center::after {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background-color: var(--primary);
+}
+
+.mb-5 {
+  margin-bottom: 3rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.arch-diagram {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+}
+
+.arch-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.arch-node {
+  position: relative;
+  z-index: 1;
+  width: 250px;
+}
+
+.arch-node .glass-card {
+  padding: 1.5rem;
+}
+
+.arch-node h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.arch-branches {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 2rem;
+}
+
+@media (max-width: 860px) {
+  .arch-diagram {
+    gap: 2rem;
+  }
+  
+  .arch-branches {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .arch-lines {
+    display: none; /* Hide SVG lines on mobile, stack naturally */
+  }
+}

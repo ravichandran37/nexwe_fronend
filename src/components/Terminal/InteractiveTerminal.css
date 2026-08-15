@@ -1,0 +1,23 @@
+.interactive-terminal {
+  margin: 0;
+  width: 100%;
+  max-width: none;
+}
+
+.terminal-input {
+  background: transparent;
+  border: none;
+  color: #10B981;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  outline: none;
+  width: auto;
+  min-width: 50%;
+  padding: 0;
+  caret-color: transparent;
+}
+
+.command-line.active {
+  display: flex;
+  align-items: center;
+}

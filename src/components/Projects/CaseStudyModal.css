@@ -1,134 +1,364 @@
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   z-index: 2000;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 1.5rem;
+  overflow-y: auto;
 }
 
 .modal-content {
   width: 100%;
-  max-width: 900px;
-  max-height: 90vh;
-  overflow-y: auto;
-  background-color: var(--bg);
+  max-width: 920px;
+  max-height: 88vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-secondary, #ffffff);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.4), 0 0 35px var(--border-glow);
   position: relative;
-  padding: 0;
+  overflow: hidden !important;
+  padding: 0 !important;
 }
 
+/* Modal Header - Fixed at the top with crisp contrast */
 .modal-header {
-  position: sticky;
-  top: 0;
-  background-color: rgba(5, 5, 5, 0.95);
-  padding: 1.5rem 2rem;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 1.25rem 2rem;
   border-bottom: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
+  z-index: 20;
 }
 
-.modal-header h2 {
-  font-size: 1.5rem;
+.modal-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.35rem;
+}
+
+.modal-eyebrow-sep {
+  color: var(--border-strong);
+}
+
+.modal-eyebrow-tag {
+  background: rgba(61, 82, 160, 0.1);
+  color: var(--primary);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+}
+
+.modal-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text, #111827);
   margin: 0;
+  line-height: 1.2;
 }
 
 .close-btn {
-  background: none;
-  border: none;
-  color: var(--muted);
+  background: var(--card, rgba(255, 255, 255, 0.8));
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
   cursor: pointer;
-  transition: color 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .close-btn:hover {
-  color: var(--text);
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: rotate(90deg);
 }
 
+/* Modal Body - Guaranteed smooth scrolling */
 .modal-body {
-  padding: 2rem;
-}
-
-.text-primary {
-  color: var(--primary);
-}
-
-.mb-3 {
-  margin-bottom: 1rem;
-}
-
-.flow-path {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem;
-  background-color: rgba(255, 255, 255, 0.02);
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-}
-
-.flow-node {
-  background-color: var(--card);
-  border: 1px solid var(--border-strong);
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.flow-arrow-right {
-  color: var(--muted);
-}
-
-.case-study-fields {
+  flex-grow: 1;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: 2rem 2.25rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.cs-field {
+/* Custom Scrollbar for Modal Body */
+.modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 4px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: var(--border-strong, #8697C4);
+  border-radius: 4px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: var(--primary, #3D52A0);
+}
+
+/* Sections */
+.cs-section {
   display: flex;
   flex-direction: column;
+  gap: 0.65rem;
+}
+
+.cs-section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.cs-section-title {
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.cs-body-text {
+  color: var(--text, #111827);
+  line-height: 1.7;
+  font-size: 1.02rem;
+  margin: 0;
+}
+
+/* Flow Path */
+.flow-path {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: rgba(61, 82, 160, 0.04);
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.flow-node {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--bg-secondary, #ffffff);
+  border: 1px solid var(--border-strong);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.node-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(61, 82, 160, 0.12);
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.flow-arrow-right {
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+}
+
+/* Problem & Solution Grid */
+.problem-solution-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.card-callout {
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.card-problem {
+  background: rgba(239, 68, 68, 0.06);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.card-solution {
+  background: rgba(16, 185, 129, 0.06);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.callout-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+}
+
+.callout-text {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Tech Badges */
+.tech-badges-list {
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
 }
 
-.cs-label {
+.tech-badge {
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: rgba(61, 82, 160, 0.08);
   color: var(--primary);
+  border: 1px solid rgba(61, 82, 160, 0.25);
+}
+
+/* Result Highlight */
+.result-highlight-card {
+  background: linear-gradient(135deg, rgba(61, 82, 160, 0.08) 0%, rgba(112, 145, 230, 0.08) 100%);
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.result-title {
+  color: var(--primary);
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+  margin: 0;
+  font-weight: 700;
+}
+
+.result-text {
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Modal Bottom CTA */
+.modal-cta-box {
+  background: rgba(61, 82, 160, 0.05);
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.cta-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 0.25rem;
+}
+
+.cta-sub {
   font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  color: var(--muted);
   margin: 0;
 }
 
-.cs-value {
-  color: var(--text);
-  line-height: 1.7;
-  font-size: 1.05rem;
-  margin: 0;
+.cta-schedule-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
 }
 
 @media (max-width: 768px) {
   .modal-overlay {
-    padding: 1rem;
+    padding: 0.75rem;
   }
-  
+
   .modal-content {
-    max-height: 95vh;
+    max-height: 94vh;
   }
-  
+
+  .modal-header {
+    padding: 1rem 1.25rem;
+  }
+
+  .modal-title {
+    font-size: 1.4rem;
+  }
+
   .modal-body {
-    padding: 1.5rem;
+    padding: 1.25rem 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .problem-solution-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-cta-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-schedule-btn {
+    width: 100%;
+    justify-content: center;
   }
 }

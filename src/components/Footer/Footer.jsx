@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, Github, Linkedin, ArrowRight } from 'lucide-react';
+import { Mail, Phone, Github, Linkedin, ArrowRight, Calendar } from 'lucide-react';
 import { socialLinks } from '../../data/social';
+import { useScheduleModal } from '../../context/ScheduleModalContext';
 import './Footer.css';
 
 const Footer = () => {
+  const { openScheduleModal } = useScheduleModal();
+
   return (
     <footer className="footer-wrapper">
       <div className="footer-glow-line"></div>
@@ -18,11 +21,11 @@ const Footer = () => {
               Whether you need a scalable backend, a sleek frontend, or a complete full-stack solution, let's turn your vision into reality.
             </p>
           </div>
-          <a href={`mailto:${socialLinks.email}`} className="cta-button group">
-            <span className="relative z-10 font-medium">Start a Project</span>
-            <ArrowRight className="relative z-10 transition-transform group-hover:translate-x-1" size={20} />
+          <button onClick={() => openScheduleModal()} className="cta-button group cursor-pointer border-none text-left appearance-none">
+            <span className="relative z-10 font-medium text-white">Schedule Call</span>
+            <Calendar className="relative z-10 transition-transform group-hover:scale-110 text-white ml-2" size={18} />
             <div className="cta-button-bg"></div>
-          </a>
+          </button>
         </div>
 
         {/* Main Footer */}
@@ -72,6 +75,9 @@ const Footer = () => {
             <div className="eyebrow mb-6! justify-start!">Navigation</div>
             <ul className="footer-nav-links">
               <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/process">Process</Link></li>
+              <li><Link to="/projects">Projects</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
@@ -81,8 +87,8 @@ const Footer = () => {
         <div className="footer-bottom">
           <p className="copyright">© {new Date().getFullYear()} Nexwe Solutions. All rights reserved.</p>
           <div className="footer-legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/terms-of-service">Terms of Service</Link>
           </div>
         </div>
       </div>

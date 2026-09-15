@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone } from 'lucide-react';
+import { Mail, Phone, Calendar } from 'lucide-react';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { socialLinks } from '../../data/social';
+import { useScheduleModal } from '../../context/ScheduleModalContext';
+import { API_BASE_URL } from '../../config/api';
 import './Contact.css';
 
 const Contact = () => {
   const [ref, isRevealed] = useScrollReveal();
+  const { openScheduleModal } = useScheduleModal();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,7 +29,7 @@ const Contact = () => {
     setStatus({ type: '', message: '' });
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'}/api/contact/`, {
+      const response = await fetch(`${API_BASE_URL}/api/contact/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -77,6 +80,18 @@ const Contact = () => {
                   <div className="method-label mono">PHONE</div>
                   <a href={`tel:${socialLinks.phone.replace(/\s+/g, '')}`} className="method-value">{socialLinks.phone}</a>
                 </div>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-border/50">
+                <p className="text-sm text-muted mb-3 font-medium">Prefer an interactive conversation?</p>
+                <button 
+                  type="button" 
+                  onClick={() => openScheduleModal()}
+                  className="btn btn-primary flex items-center gap-2 text-sm shadow-md"
+                >
+                  <Calendar size={16} />
+                  <span>Book 30-Min Strategy Call</span>
+                </button>
               </div>
             </div>
           </div>

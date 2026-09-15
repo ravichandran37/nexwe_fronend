@@ -4,9 +4,12 @@ import { Link } from 'react-router-dom';
 import { Mail } from 'lucide-react';
 import Terminal from '../Terminal/Terminal';
 import MagneticButton from '../ui/MagneticButton';
+import { useScheduleModal } from '../../context/ScheduleModalContext';
 import './Hero.css';
 
 const Hero = () => {
+  const { openScheduleModal } = useScheduleModal();
+
   return (
     <section id="home" className="hero-section">
       <div className="blob-container">
@@ -41,12 +44,14 @@ const Hero = () => {
               <Link to="/projects" className="btn btn-primary">View Projects</Link>
             </MagneticButton>
             <MagneticButton>
-              <Link to="/contact" className="btn btn-secondary">Schedule Call</Link>
+              <button onClick={openScheduleModal} className="btn btn-secondary cursor-pointer">
+                Schedule Call
+              </button>
             </MagneticButton>
           </motion.div>
 
           <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="hero-social">
-            <a href="mailto:ravichandran37frontend@gmail.com" aria-label="Email Me">
+            <a href="mailto:nexwesolutions@gmail.com" aria-label="Email Me">
               <Mail size={24} />
             </a>
           </motion.div>

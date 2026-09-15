@@ -28,7 +28,7 @@ const Education = () => {
               <User size={64} className="text-primary" />
             </div>
             <div className="founder-badges">
-              <div className="badge glass-card"><Briefcase size={16}/> 10+ Years Exp</div>
+              <div className="badge glass-card"><Briefcase size={16}/> 3+ Years Exp</div>
               <div className="badge glass-card"><Award size={16}/> Top Rated</div>
             </div>
           </div>

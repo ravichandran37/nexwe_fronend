@@ -120,6 +120,8 @@
   background-color: transparent;
   color: white;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
   padding: 0.6rem 1.5rem;
   border-radius: 999px;
   font-size: 0.95rem;

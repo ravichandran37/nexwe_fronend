@@ -8,8 +8,12 @@ import AboutPage from './pages/AboutPage';
 import ProcessPage from './pages/ProcessPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsOfServicePage from './pages/TermsOfServicePage';
 import ScrollToTop from './components/ScrollToTop';
 import { CursorProvider } from './context/CursorContext';
+import { ScheduleModalProvider } from './context/ScheduleModalContext';
+import ScheduleCallModal from './components/ScheduleModal/ScheduleCallModal';
 
 function App() {
   const { scrollYProgress } = useScroll();
@@ -21,26 +25,31 @@ function App() {
 
   return (
     <CursorProvider>
-      <BrowserRouter>
-        <ScrollToTop />
-        <motion.div
-          className="fixed top-0 left-0 right-0 h-1 origin-left z-100"
-          style={{ scaleX, background: 'linear-gradient(90deg, var(--primary), var(--secondary))' }}
-        />
-        <div className="app flex flex-col min-h-screen bg-(--bg) text-(--text) font-sans relative overflow-x-hidden">
-          <Navbar />
-          <main className="grow pt-20">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/process" element={<ProcessPage />} />
-              <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </BrowserRouter>
+      <ScheduleModalProvider>
+        <BrowserRouter>
+          <ScrollToTop />
+          <motion.div
+            className="fixed top-0 left-0 right-0 h-1 origin-left z-100"
+            style={{ scaleX, background: 'linear-gradient(90deg, var(--primary), var(--secondary))' }}
+          />
+          <div className="app flex flex-col min-h-screen bg-(--bg) text-(--text) font-sans relative overflow-x-hidden">
+            <Navbar />
+            <main className="grow pt-20">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/process" element={<ProcessPage />} />
+                <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+                <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+          <ScheduleCallModal />
+        </BrowserRouter>
+      </ScheduleModalProvider>
     </CursorProvider>
   );
 }

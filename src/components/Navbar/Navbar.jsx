@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Calendar } from 'lucide-react';
+import { useScheduleModal } from '../../context/ScheduleModalContext';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -19,6 +20,8 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const { openScheduleModal } = useScheduleModal();
 
   // Close menu when route changes
   useEffect(() => {
@@ -50,11 +53,18 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <Link to="/contact" className="btn-cta" onClick={() => setMenuOpen(false)}>
+          <button 
+            type="button" 
+            className="btn-cta" 
+            onClick={() => {
+              setMenuOpen(false);
+              openScheduleModal();
+            }}
+          >
             <span className="btn-cta-text">Schedule Call</span>
             <Calendar size={16} className="btn-cta-icon" />
             <div className="btn-cta-bg"></div>
-          </Link>
+          </button>
         </div>
 
         <button 

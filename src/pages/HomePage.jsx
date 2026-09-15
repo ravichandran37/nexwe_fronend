@@ -4,6 +4,7 @@ import { Layout, Server, Network, BrainCircuit, ArrowRight } from 'lucide-react'
 import Hero from '../components/Hero/Hero';
 import Marquee from '../components/Marquee/Marquee';
 import InteractiveTerminal from '../components/Terminal/InteractiveTerminal';
+import WhyUs from '../components/WhyUs/WhyUs';
 
 const buildAreas = [
   { icon: <Layout size={32} />, title: "Frontend", desc: "Interactive web interfaces." },
@@ -17,6 +18,7 @@ const HomePage = () => {
     <div className="home-page animate-fade-in">
       <Hero />
       <Marquee />
+      <WhyUs />
       
       <section className="bento-section relative z-10 py-12">
         <div className="container mx-auto px-4">

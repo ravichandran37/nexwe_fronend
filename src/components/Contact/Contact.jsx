@@ -63,7 +63,7 @@ const Contact = () => {
         >
           <div className="contact-info">
             <div className="eyebrow">CONTACT</div>
-            <h2 className="contact-heading">LET'S BUILD SOMETHING GREAT.</h2>
+            <h1 className="contact-heading">LET'S BUILD SOMETHING GREAT.</h1>
             <p className="contact-subtitle">Have a project, opportunity or idea? Let's talk.</p>
             
             <div className="contact-methods">

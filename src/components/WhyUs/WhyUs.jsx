@@ -42,7 +42,18 @@ const WhyUs = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <div className="glass-card image-wrapper p-2!">
-              <img src="/why_us_banner.jpg" alt="Why Choose Nexwe Solutions" className="why-us-img" />
+              <picture>
+                <source srcSet="/why_us_banner.webp" type="image/webp" />
+                <img 
+                  src="/why_us_banner.jpg" 
+                  alt="Why Choose Nexwe Solutions - Software Development Agency in Tamil Nadu" 
+                  width="1024" 
+                  height="785" 
+                  loading="lazy" 
+                  decoding="async"
+                  className="why-us-img" 
+                />
+              </picture>
               <div className="image-glow"></div>
             </div>
           </motion.div>

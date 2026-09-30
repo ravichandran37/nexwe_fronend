@@ -27,9 +27,9 @@ const Projects = () => {
       <div className="container mx-auto px-4" ref={ref}>
         <div className="section-header max-w-2xl mb-14">
           <div className="eyebrow mb-3">SELECTED WORK</div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-4">
             Featured <span className="text-gradient-accent">Projects</span>
-          </h2>
+          </h1>
           <p className="text-muted text-base sm:text-lg leading-relaxed">
             A curated portfolio of production-grade systems, full-stack web platforms, and intelligent AI architectures engineered for scale.
           </p>

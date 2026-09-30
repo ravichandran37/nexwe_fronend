@@ -1,10 +1,13 @@
 import React from 'react';
 import './PrivacyPolicyPage.css';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO/SEO';
+import { pageSeoData } from '../config/seoConfig';
 
 const PrivacyPolicyPage = () => {
   return (
     <div className="privacy-policy-page container">
+      <SEO {...pageSeoData.privacyPolicy} />
       <motion.div 
         className="privacy-policy-content glass-card"
         initial={{ opacity: 0, y: 20 }}

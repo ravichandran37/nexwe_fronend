@@ -5,6 +5,8 @@ import Hero from '../components/Hero/Hero';
 import Marquee from '../components/Marquee/Marquee';
 import InteractiveTerminal from '../components/Terminal/InteractiveTerminal';
 import WhyUs from '../components/WhyUs/WhyUs';
+import SEO from '../components/SEO/SEO';
+import { pageSeoData } from '../config/seoConfig';
 
 const buildAreas = [
   { icon: <Layout size={32} />, title: "Frontend", desc: "Interactive web interfaces." },
@@ -16,6 +18,7 @@ const buildAreas = [
 const HomePage = () => {
   return (
     <div className="home-page animate-fade-in">
+      <SEO {...pageSeoData.home} />
       <Hero />
       <Marquee />
       <WhyUs />

@@ -52,13 +52,36 @@
   color: var(--text);
   text-decoration: none;
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  gap: 0.65rem;
   letter-spacing: -0.02em;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 9px;
+  background-color: #000;
+  box-shadow: 0 4px 14px rgba(61, 82, 160, 0.28);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  display: inline-flex;
+  align-items: baseline;
 }
 
 .logo:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
+}
+
+.logo:hover .logo-img {
+  transform: scale(1.08) rotate(-3deg);
+  box-shadow: 0 6px 20px rgba(112, 145, 230, 0.55);
 }
 
 .logo .dot {

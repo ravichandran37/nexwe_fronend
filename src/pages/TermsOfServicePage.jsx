@@ -1,10 +1,13 @@
 import React from 'react';
 import './TermsOfServicePage.css';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO/SEO';
+import { pageSeoData } from '../config/seoConfig';
 
 const TermsOfServicePage = () => {
   return (
     <div className="terms-service-page container">
+      <SEO {...pageSeoData.termsOfService} />
       <motion.div 
         className="terms-service-content glass-card"
         initial={{ opacity: 0, y: 20 }}

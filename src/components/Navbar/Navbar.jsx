@@ -33,13 +33,20 @@ const Navbar = () => {
     { name: 'About', href: '/about' },
     { name: 'Process', href: '/process' },
     { name: 'Projects', href: '/projects' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
-        <Link to="/" className="logo">
-          NEXWE<span className="dot"></span>
+        <Link to="/" className="logo" aria-label="Nexwe Solutions Home">
+          <picture>
+            <source srcSet="/logo.webp" type="image/webp" />
+            <img src="/logo.png" alt="Nexwe Solutions Logo" width="36" height="36" className="logo-img" />
+          </picture>
+          <span className="logo-text">
+            NEXWE<span className="dot"></span>
+          </span>
         </Link>
 
         <div className={`nav-links ${menuOpen ? 'open' : ''}`}>

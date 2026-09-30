@@ -31,8 +31,14 @@ const Footer = () => {
         {/* Main Footer */}
         <div className="footer-main">
           <div className="footer-brand-section">
-            <Link to="/" className="logo footer-logo">
-              NEXWE<span className="dot"></span>
+            <Link to="/" className="logo footer-logo" aria-label="Nexwe Solutions Home">
+              <picture>
+                <source srcSet="/logo.webp" type="image/webp" />
+                <img src="/logo.png" alt="Nexwe Solutions Logo" width="44" height="44" className="logo-img" />
+              </picture>
+              <span className="logo-text">
+                NEXWE<span className="dot"></span>
+              </span>
             </Link>
             <p className="footer-role">Elevating digital experiences with premium software development.</p>
             <div className="footer-socials">

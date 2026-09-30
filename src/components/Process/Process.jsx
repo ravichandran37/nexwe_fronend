@@ -21,8 +21,8 @@ const Process = () => {
       
       <div className="container mx-auto px-4" ref={ref}>
         <div className="text-center mb-20">
-          <div className="eyebrow justify-center mb-6">HOW I WORK</div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-gradient">Development Process</h2>
+          <div className="eyebrow justify-center mb-6">HOW WE WORK</div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-gradient">Development Process</h1>
           <p className="text-muted max-w-2xl mx-auto text-lg">
             A systematic approach to transforming ideas into scalable, high-performance software solutions.
           </p>

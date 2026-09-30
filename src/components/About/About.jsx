@@ -32,9 +32,9 @@ const About = () => {
             animate={isRevealed ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight">
+            <h1 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight">
               Bridging the gap between <span className="text-gradient-accent">design</span> and <span className="text-gradient">robust engineering.</span>
-            </h2>
+            </h1>
             <div className="space-y-6 text-lg text-muted">
               <p>
                 Nexwe Solutions is a forward-thinking agency dedicated to building modern, high-performance web applications. We don't just write code; we solve real-world problems through scalable technology.

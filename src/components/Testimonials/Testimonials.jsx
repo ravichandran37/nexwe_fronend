@@ -113,14 +113,11 @@ const Testimonials = () => {
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
-            {/* Top Row: Oversized Quote Mark + Demo Testimonial Tag */}
+            {/* Top Row: Oversized Quote Mark */}
             <div className="testimonial-card-top">
               <div className="testimonial-quote-mark" aria-hidden="true">
                 “
               </div>
-              <span className="demo-testimonial-tag">
-                DEMO TESTIMONIAL
-              </span>
             </div>
 
             {/* Vertical Sliding Viewport with overflow: hidden */}

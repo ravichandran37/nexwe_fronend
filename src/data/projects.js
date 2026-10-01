@@ -50,7 +50,31 @@ export const projects = [
   {
     id: 3,
     number: "03",
-    editorialLabel: "03 // E-COMMERCE",
+    editorialLabel: "03 // LUXURY COMMERCE",
+    title: "AURA // STREET × HERITAGE",
+    image: "/projects/aura.jpg",
+    liveUrl: "https://aura-virid-eta.vercel.app/",
+    features: [
+      "Interactive Cart & Checkout",
+      "Parallax Lookbook & Stories",
+      "Interactive India Craft Map"
+    ],
+    badges: ["HTML5", "Tailwind CSS", "GSAP 3", "ScrollTrigger", "Vanilla JS", "Phosphor Icons", "E-Commerce"],
+    caseStudy: {
+      overview: "Aura is a high-concept, editorial e-commerce platform and digital brand world designed for a contemporary Indian luxury streetwear label. It marries traditional Indian artisanal textiles (Khadi, Jamdani, Ikat) with modern oversize streetwear silhouettes, featuring a slide-out cart drawer, interactive India craft map, parallax lookbook, story reader modal, and interactive checkout flow.",
+      problem: "High-end fashion consumers demand immersive, narrative-driven shopping experiences that transcend static product grids. Traditional Shopify or generic e-commerce templates fail to communicate cultural authenticity, fabric provenance, and the rebellious spirit of modern urban fashion.",
+      solution: "Engineered a cinematic, editorial digital storefront utilizing custom GSAP scroll timelines, an interactive craft map exploring regional textile hubs (Varanasi, Kutch, Pochampally), a full-featured slide-out cart drawer with dynamic subtotal & discount calculation, product quick-view modals, and simulated frictionless checkout.",
+      features: "Interactive 0–100% preloader, sticky editorial navbar with search and slide-out cart drawer, multi-category collection filtering (Overshirts, Hoodies, Cargos, Accessories), size selectors with real-time stock indicators, interactive SVG India craft map with clickable cultural hubs, parallax lookbook, and interactive story reader modal.",
+      architecture: "High-performance modular architecture built with semantic HTML5, utility-first Tailwind CSS, and hardware-accelerated GSAP 3 & ScrollTrigger. State management for cart items, promo codes, search indexing, and modal lifecycle is driven by reactive Vanilla JavaScript with persistent localStorage caching.",
+      technologies: "HTML5, Tailwind CSS, GSAP 3, GSAP ScrollTrigger, Vanilla JavaScript (ES6+), Phosphor Icons, Google Fonts (Syne & Manrope), Vercel.",
+      challenges: "Harmonizing rich editorial animations and interactive SVG mapping with instantaneous page responsiveness, touch-friendly gestures, and accessible keyboard navigation without relying on heavy third-party UI frameworks.",
+      result: "Deployed live to production at aura-virid-eta.vercel.app, delivering a seamless 60fps luxury shopping experience that establishes an unforgettable digital benchmark for contemporary Indian streetwear."
+    }
+  },
+  {
+    id: 4,
+    number: "04",
+    editorialLabel: "04 // E-COMMERCE",
     title: "E-COMMERCE PLATFORM",
     image: "/projects/ecommerce.jpg",
     liveUrl: "https://cravo-two.vercel.app",
@@ -72,9 +96,9 @@ export const projects = [
     }
   },
   {
-    id: 4,
-    number: "04",
-    editorialLabel: "04 // AI & AUTOMATION",
+    id: 5,
+    number: "05",
+    editorialLabel: "05 // AI & AUTOMATION",
     title: "AI CUSTOMER SUPPORT CHATBOT",
     image: "/projects/chatbot.jpg",
     liveUrl: "https://cravo-two.vercel.app",

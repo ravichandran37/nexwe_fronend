@@ -36,6 +36,8 @@ const CaseStudyModal = ({ project, onClose }) => {
       projectTitle: project.title,
       service: project.title.toLowerCase().includes('cravo') || project.title.toLowerCase().includes('restaurant')
         ? 'Full-Stack Restaurant & Ordering Platform'
+        : project.title.toLowerCase().includes('aura') || project.title.toLowerCase().includes('fashion')
+        ? 'Luxury E-Commerce & Brand Platform'
         : project.title.toLowerCase().includes('catchy') || project.title.toLowerCase().includes('export')
         ? 'B2B Web Platform / Export Portal'
         : project.title.toLowerCase().includes('chatbot') 

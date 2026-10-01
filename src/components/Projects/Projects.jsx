@@ -1,40 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import ProjectCard from './ProjectCard';
 import CaseStudyModal from './CaseStudyModal';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
-import { API_BASE_URL } from '../../config/api';
-import { projects as defaultProjects } from '../../data/projects';
+import { projects } from '../../data/projects';
 import './Projects.css';
 
 const Projects = () => {
   const [ref, isRevealed] = useScrollReveal();
   const [selectedProject, setSelectedProject] = useState(null);
-  const [projects, setProjects] = useState(defaultProjects);
-
-  useEffect(() => {
-    fetch(`${API_BASE_URL}/api/portfolio/projects/`)
-      .then(res => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        return res.json();
-      })
-      .then(data => {
-        if (Array.isArray(data) && data.length > 0) {
-          // Merge images, editorialLabel, and features from defaultProjects if not present in API
-          const merged = data.map((item, idx) => ({
-            ...defaultProjects[idx],
-            ...item,
-            editorialLabel: item.editorialLabel || defaultProjects[idx]?.editorialLabel || `0${idx + 1} // PROJECT`,
-            image: item.image || defaultProjects[idx]?.image || '/projects/cravo.jpg',
-            features: item.features && item.features.length > 0 ? item.features.slice(0, 3) : defaultProjects[idx]?.features || [],
-          }));
-          setProjects(merged);
-        }
-      })
-      .catch(err => {
-        console.warn("Using offline portfolio projects data:", err.message);
-      });
-  }, []);
 
   return (
     <section id="projects" className="projects-section relative overflow-hidden">

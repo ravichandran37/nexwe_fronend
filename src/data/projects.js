@@ -26,7 +26,31 @@ export const projects = [
   {
     id: 2,
     number: "02",
-    editorialLabel: "02 // E-COMMERCE",
+    editorialLabel: "02 // B2B SUPPLY CHAIN",
+    title: "CATCHY EXPORTS",
+    image: "/projects/catchyexports.jpg",
+    liveUrl: "https://catchyexports.vercel.app/",
+    features: [
+      "B2B Wholesale RFQ Portal",
+      "Cold-Chain Logistics Specs",
+      "Interactive GSAP Showcase"
+    ],
+    badges: ["HTML5", "Tailwind CSS", "GSAP 3", "ScrollTrigger", "Vanilla JS", "Phosphor Icons", "B2B Export"],
+    caseStudy: {
+      overview: "A modern, cinematic, high-converting B2B fruit export landing page engineered for Catchy Exports to serve wholesale fruit importers, supermarket chains, and distribution desks worldwide. Built with pure semantic HTML5, tailored Tailwind CSS styling, GSAP 3 scroll animations, and interactive quote inquiry workflows.",
+      problem: "Traditional agricultural export websites suffer from dated designs, lack of clear technical trade specifications, friction-filled inquiry processes, and poor mobile responsiveness, leading to missed opportunities with international B2B buyers.",
+      solution: "Developed a high-converting, performance-driven digital presence featuring a cinematic emerald aesthetic, interactive character-split headline animations, an interactive 3-panel horizontal pin-scroll product showcase, an automated testimonial carousel, and an interactive glassmorphic RFQ (Request for Quote) system with instant client validation and reference codes.",
+      features: "Features character-by-character headline splitting, interactive preloader (0-100% progress), subtle magnetic CTA buttons, 3-panel horizontal showcase for export fruits (Alphonso Mangoes, Bananas, Cold-Chain Fleet), automatic client testimonial slider, and a modal-grade B2B inquiry/RFQ form with validation and reference generation.",
+      architecture: "Self-contained frontend architecture powered by semantic HTML5, modern utility-first Tailwind CSS, and hardware-accelerated GSAP 3 with ScrollTrigger plugins. Centralized business configuration model provides instant zero-build customization, while respecting user accessibility preferences (prefers-reduced-motion).",
+      technologies: "HTML5, Tailwind CSS, GSAP 3, GSAP ScrollTrigger, Vanilla JavaScript (ES6+), Phosphor Icons, Google Fonts (Space Grotesk & Outfit), Vercel.",
+      challenges: "Engineering smooth horizontal pin-scroll mechanics on desktop that gracefully fold down into a natural vertical stack on touch devices, all while maintaining zero-dependency build architecture and sub-second load times.",
+      result: "Deployed live to production at catchyexports.vercel.app with flawless responsiveness across all viewports from 320px to 4K displays, establishing an authoritative international brand identity for wholesale fruit exports."
+    }
+  },
+  {
+    id: 3,
+    number: "03",
+    editorialLabel: "03 // E-COMMERCE",
     title: "E-COMMERCE PLATFORM",
     image: "/projects/ecommerce.jpg",
     liveUrl: "https://cravo-two.vercel.app",
@@ -48,9 +72,9 @@ export const projects = [
     }
   },
   {
-    id: 3,
-    number: "03",
-    editorialLabel: "03 // AI & AUTOMATION",
+    id: 4,
+    number: "04",
+    editorialLabel: "04 // AI & AUTOMATION",
     title: "AI CUSTOMER SUPPORT CHATBOT",
     image: "/projects/chatbot.jpg",
     liveUrl: "https://cravo-two.vercel.app",

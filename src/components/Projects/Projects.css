@@ -1,41 +1,143 @@
+/* Projects Page container spacing */
+.projects-page {
+  padding-top: 3.5rem;
+}
+
+@media (min-width: 640px) {
+  .projects-page {
+    padding-top: 4.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects-page {
+    padding-top: 5.5rem;
+  }
+}
+
+/* Projects Showcase Section */
 .projects-section {
   position: relative;
-  z-index: 10;
-  padding: 4.5rem 0 5.5rem;
+  scroll-margin-top: 7rem;
+  padding: 1.5rem 0 5.5rem;
 }
 
+/* Multi-Column Responsive Grid (Desktop 3, Tablet 2, Mobile 1) */
 .projects-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 3.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
   width: 100%;
 }
 
+@media (min-width: 640px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.25rem;
+  }
+}
+
+/* NEXWE Project Card - Premium Agency Styling */
 .project-card {
   width: 100%;
-  padding: 0 !important;
   background-color: var(--bg-secondary, #ffffff);
   border: 1px solid var(--border);
   border-radius: 20px;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04);
+  padding: 1.5rem;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .project-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(61, 82, 160, 0.12), 0 0 25px var(--border-glow);
+  transform: translateY(-4px);
   border-color: var(--primary);
+  box-shadow: 0 16px 36px -10px rgba(61, 82, 160, 0.14),
+              0 0 20px rgba(61, 82, 160, 0.06);
 }
 
-.mockup-window {
-  width: 100%;
-  border-radius: 12px;
-  background: var(--card, rgba(255, 255, 255, 0.95));
-  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.12);
+/* Subtle Unique Treatments per card */
+.project-card.card-variant-alpha {
+  border-top-width: 2px;
 }
 
-@media (max-width: 1024px) {
-  .projects-grid {
-    gap: 2.5rem;
+.project-card.card-variant-beta {
+  border-radius: 20px 28px 20px 28px;
+}
+
+.project-card.card-variant-gamma {
+  border-top-width: 2px;
+}
+
+/* Project Number Badge */
+.project-number-badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 20;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Image Container Frame */
+.project-image-container {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.dark .project-image-container {
+  border-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Check Icon */
+.feature-check-icon {
+  background-color: rgba(61, 82, 160, 0.1);
+  color: var(--primary);
+}
+
+/* Actions */
+.project-card-actions {
+  border-color: rgba(173, 187, 218, 0.35);
+}
+
+.dark .project-card-actions {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Mobile responsive padding */
+@media (max-width: 640px) {
+  .projects-section {
+    scroll-margin-top: 5rem;
+    padding: 1.5rem 0 3.5rem;
+  }
+  
+  .project-card {
+    padding: 1.25rem !important;
+    border-radius: 18px;
   }
 }

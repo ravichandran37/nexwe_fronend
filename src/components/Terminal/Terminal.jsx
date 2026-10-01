@@ -9,7 +9,7 @@ const Terminal = () => {
 
   const commands = [
     { cmd: 'whoarewe', output: 'Nexwe Solutions\nSoftware Development Agency' },
-    { cmd: 'stack', output: 'React • Python • Django • REST APIs • SQL' },
+    { cmd: 'stack', output: 'React • TypeScript • Node.js • Python • Django • SQL' },
     { cmd: 'status', output: 'Accepting new clients and projects' }
   ];
 

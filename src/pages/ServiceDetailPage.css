@@ -1,0 +1,422 @@
+/* Detailed Service Page Styles */
+.service-detail-page {
+  position: relative;
+}
+
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .service-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+.service-offering-card {
+  padding: 1.75rem;
+  border-radius: 20px;
+  background-color: var(--bg-secondary, #ffffff);
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+}
+
+.dark .service-offering-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.service-offering-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+  box-shadow: 0 12px 28px -8px rgba(61, 82, 160, 0.12);
+}
+
+.tech-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  background-color: rgba(61, 82, 160, 0.08);
+  color: var(--primary);
+  border: 1px solid rgba(61, 82, 160, 0.15);
+  display: inline-flex;
+  align-items: center;
+}
+
+.dark .tech-tag {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #a5b4fc;
+}
+
+/* ==================================================
+   Shared Service Detail Pages Alignment & Layout
+   (Used identically by Security, Web Dev, & App Dev)
+   ================================================== */
+
+.service-page-container,
+.security-page-container {
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+
+.service-sections-stack,
+.security-sections-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 28px; /* Consistent 24-32px spacing */
+  width: 100%;
+}
+
+/* 1. Top Service Cards Grid */
+.service-cards-grid,
+.security-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .service-cards-grid,
+  .security-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+.service-card,
+.security-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 28px;
+  border-radius: 20px;
+  background-color: var(--bg-secondary, #ffffff);
+  border: 1px solid var(--border);
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+}
+
+.dark .service-card,
+.dark .security-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.service-card:hover,
+.security-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+  box-shadow: 0 12px 28px -8px rgba(61, 82, 160, 0.12);
+}
+
+/* Card Header: Icon + Title on the same horizontal row */
+.service-card-header,
+.security-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.service-card-icon-wrap,
+.security-card-icon-wrap {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 12px;
+  background-color: rgba(61, 82, 160, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.service-card-title,
+.security-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 1.25;
+  transition: color 0.2s ease;
+}
+
+.service-card:hover .service-card-title,
+.security-card:hover .security-card-title {
+  color: var(--primary);
+}
+
+/* Description starts from card's left content edge */
+.service-card-desc,
+.security-card-desc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0 0 20px 0;
+  flex: 1 1 auto;
+}
+
+/* Bottom status line anchored to exact same vertical position */
+.service-card-footer,
+.security-card-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.05em;
+}
+
+/* 2. Large Information Section */
+.service-info-card,
+.security-standards-card {
+  width: 100%;
+  padding: 36px;
+  border-radius: 24px;
+  background-color: var(--bg-secondary, #ffffff);
+  border: 1px solid var(--border);
+  box-sizing: border-box;
+}
+
+.dark .service-info-card,
+.dark .security-standards-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 640px) {
+  .service-info-card,
+  .security-standards-card {
+    padding: 24px;
+  }
+}
+
+.service-info-title,
+.security-standards-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin: 0 0 8px 0;
+}
+
+.service-info-desc,
+.security-standards-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 780px;
+  margin: 0 0 20px 0;
+}
+
+/* Tags in a clean horizontal row with consistent height/padding/gap/border-radius */
+.service-tags-row,
+.security-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  width: 100%;
+}
+
+.service-tech-tag,
+.security-tech-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 8px;
+  background-color: rgba(61, 82, 160, 0.08);
+  color: var(--primary);
+  border: 1px solid rgba(61, 82, 160, 0.16);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.dark .service-tech-tag,
+.dark .security-tech-tag {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #a5b4fc;
+}
+
+/* Feature List: 2-column grid with vertically aligned checks */
+.service-features-grid,
+.security-features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .service-features-grid,
+  .security-features-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 48px;
+  }
+}
+
+.service-feature-item,
+.security-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.service-feature-check,
+.security-feature-check {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border-radius: 50%;
+  background-color: rgba(61, 82, 160, 0.1);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.service-feature-text,
+.security-feature-text {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* 3. Bottom CTA: 70-80px height, left/right aligned, vertically centered */
+.service-cta-banner,
+.security-cta-banner {
+  width: 100%;
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  border-radius: 16px;
+  background-color: rgba(61, 82, 160, 0.05);
+  border: 1px solid rgba(61, 82, 160, 0.18);
+  box-sizing: border-box;
+}
+
+.dark .service-cta-banner,
+.dark .security-cta-banner {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.service-cta-left,
+.security-cta-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.service-cta-eyebrow,
+.security-cta-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.service-cta-heading,
+.security-cta-heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.service-cta-right,
+.security-cta-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.service-cta-process-link,
+.security-cta-process-link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.service-cta-process-link:hover,
+.security-cta-process-link:hover {
+  color: var(--secondary);
+  transform: translateX(2px);
+}
+
+.service-cta-btn,
+.security-cta-btn {
+  padding: 10px 20px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .service-cta-banner,
+  .security-cta-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    min-height: auto;
+    padding: 20px;
+  }
+  
+  .service-cta-right,
+  .security-cta-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

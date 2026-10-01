@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Layout, Server, Database, BrainCircuit, Wrench } from 'lucide-react';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { API_BASE_URL } from '../../config/api';
+import { skills as defaultSkills } from '../../data/skills';
 import './TechStack.css';
 
 const iconMap = {
@@ -15,13 +16,22 @@ const iconMap = {
 
 const TechStack = () => {
   const [ref, isRevealed] = useScrollReveal();
-  const [skills, setSkills] = useState([]);
+  const [skills, setSkills] = useState(defaultSkills);
 
   useEffect(() => {
     fetch(`${API_BASE_URL}/api/portfolio/skills/`)
-      .then(res => res.json())
-      .then(data => setSkills(data))
-      .catch(err => console.error("Error fetching skills:", err));
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then(data => {
+        if (Array.isArray(data) && data.length > 0) {
+          setSkills(data);
+        }
+      })
+      .catch(err => {
+        console.warn("Using offline skills data:", err.message);
+      });
   }, []);
 
   return (

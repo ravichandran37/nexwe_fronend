@@ -30,9 +30,33 @@ export const pageSeoData = {
   },
   projects: {
     title: "Portfolio & Case Studies | Nexwe Solutions Software Agency",
-    description: "Explore full-stack web applications, e-commerce platforms, and AI chatbot case studies built with React, Python, Django, and modern cloud architecture by Nexwe.",
+    description: "Explore full-stack web applications, restaurant ordering platforms, e-commerce systems, and AI chatbot case studies built with React, Node.js, Python, Django, and modern cloud architecture by Nexwe.",
     canonical: "https://nexwe.in/projects",
-    keywords: "nexwe portfolio, full stack project case studies, python django projects, react web app showcase, ai chatbot development"
+    keywords: "nexwe portfolio, cravo kitchen and bar, restaurant ordering system, full stack project case studies, python django projects, react web app showcase, ai chatbot development"
+  },
+  services: {
+    title: "Software Engineering Services | Web, Mobile & Security | Nexwe",
+    description: "Explore Nexwe Solutions software engineering capabilities: modern full-stack web applications, native and cross-platform mobile apps, and robust application security services.",
+    canonical: "https://nexwe.in/services",
+    keywords: "software services, web development services, mobile app development, application security, full stack engineering, nexwe solutions"
+  },
+  webDevelopment: {
+    title: "Web Development Services | Full-Stack React & Python Apps | Nexwe",
+    description: "Modern, high-velocity web development: responsive business websites, full-stack React & Django applications, custom e-commerce, and enterprise software.",
+    canonical: "https://nexwe.in/services/web-development",
+    keywords: "web development services, full stack web app, react web development, django web application, ecommerce development"
+  },
+  appDevelopment: {
+    title: "App Development Services | Android, iOS & React Native | Nexwe",
+    description: "Cross-platform and native mobile app development for Android and iOS using React Native. High-performance, offline-capable mobile applications.",
+    canonical: "https://nexwe.in/services/app-development",
+    keywords: "mobile app development, react native agency, android app development, ios app development, cross platform mobile apps"
+  },
+  security: {
+    title: "Security Services | Application Protection & Audits | Nexwe",
+    description: "Professional application security services: OWASP Top 10 web hardening, API security gateways, JWT/OAuth authentication architecture, and security code audits.",
+    canonical: "https://nexwe.in/services/security",
+    keywords: "application security services, web app security audit, api security, jwt authentication, owasp hardening"
   },
   process: {
     title: "Our Development Process | Agile Software Lifecycle | Nexwe",

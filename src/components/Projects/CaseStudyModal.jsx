@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { motion } from 'framer-motion';
-import { X, ArrowRight, CheckCircle, AlertCircle, Lightbulb, Cpu, Layers, Award, Calendar } from 'lucide-react';
+import { X, ArrowRight, CheckCircle, AlertCircle, Lightbulb, Cpu, Layers, Award, Calendar, ExternalLink } from 'lucide-react';
 import { useScheduleModal } from '../../context/ScheduleModalContext';
 import './CaseStudyModal.css';
 
@@ -33,13 +34,15 @@ const CaseStudyModal = ({ project, onClose }) => {
     onClose();
     openScheduleModal({
       projectTitle: project.title,
-      service: project.title.toLowerCase().includes('chatbot') 
+      service: project.title.toLowerCase().includes('cravo') || project.title.toLowerCase().includes('restaurant')
+        ? 'Full-Stack Restaurant & Ordering Platform'
+        : project.title.toLowerCase().includes('chatbot') 
         ? 'AI / NLP Chatbot' 
         : 'Full-Stack Web App'
     });
   };
 
-  return (
+  return createPortal(
     <div className="modal-overlay" onClick={onClose}>
       <motion.div
         className="modal-content"
@@ -59,9 +62,23 @@ const CaseStudyModal = ({ project, onClose }) => {
             </div>
             <h2 className="modal-title">{project.title}</h2>
           </div>
-          <button className="close-btn" onClick={onClose} aria-label="Close modal">
-            <X size={20} />
-          </button>
+          <div className="flex items-center gap-2.5">
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary/10 border border-primary/25 text-primary hover:bg-primary hover:text-white text-xs font-semibold transition-all shadow-xs"
+                title="Launch Live Website"
+              >
+                <span>Live Site</span>
+                <ExternalLink size={13} />
+              </a>
+            )}
+            <button className="close-btn" onClick={onClose} aria-label="Close modal">
+              <X size={20} />
+            </button>
+          </div>
         </div>
 
         {/* Scrollable Body */}
@@ -193,14 +210,28 @@ const CaseStudyModal = ({ project, onClose }) => {
               <h5 className="cta-heading">Need a similar architecture or custom application?</h5>
               <p className="cta-sub">Let's discuss how we can build this for your business.</p>
             </div>
-            <button className="btn btn-primary cta-schedule-btn" onClick={handleBookDiscussion}>
-              <Calendar size={16} />
-              <span>Schedule Strategy Call</span>
-            </button>
+            <div className="flex flex-wrap items-center gap-3">
+              {project.liveUrl && (
+                <a 
+                  href={project.liveUrl} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="px-4 py-2.5 rounded-lg border border-border bg-card hover:border-primary text-foreground hover:text-primary font-semibold text-xs sm:text-sm flex items-center gap-2 transition-all shadow-xs"
+                >
+                  <span>Launch Live Site</span>
+                  <ExternalLink size={14} />
+                </a>
+              )}
+              <button className="btn btn-primary cta-schedule-btn" onClick={handleBookDiscussion}>
+                <Calendar size={16} />
+                <span>Schedule Strategy Call</span>
+              </button>
+            </div>
           </div>
         </div>
       </motion.div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

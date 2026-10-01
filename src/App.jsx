@@ -5,6 +5,10 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/ServicesPage';
+import WebDevelopmentPage from './pages/WebDevelopmentPage';
+import AppDevelopmentPage from './pages/AppDevelopmentPage';
+import SecurityServicesPage from './pages/SecurityServicesPage';
 import ProcessPage from './pages/ProcessPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
@@ -39,6 +43,10 @@ function App() {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/about" element={<AboutPage />} />
+                <Route path="/services" element={<ServicesPage />} />
+                <Route path="/services/web-development" element={<WebDevelopmentPage />} />
+                <Route path="/services/app-development" element={<AppDevelopmentPage />} />
+                <Route path="/services/security" element={<SecurityServicesPage />} />
                 <Route path="/process" element={<ProcessPage />} />
                 <Route path="/projects" element={<ProjectsPage />} />
                 <Route path="/contact" element={<ContactPage />} />

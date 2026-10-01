@@ -14,7 +14,7 @@ const projectsBreadcrumbSchema = {
 
 const ProjectsPage = () => {
   return (
-    <div className="projects-page animate-fade-in pt-12">
+    <div className="projects-page animate-fade-in pb-16">
       <SEO {...pageSeoData.projects} schema={projectsBreadcrumbSchema} />
       <Projects />
     </div>

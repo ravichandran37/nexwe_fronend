@@ -13,8 +13,8 @@ const InteractiveTerminal = () => {
   const commands = {
     help: 'Available commands:\n  help     - show this message\n  about    - read about us\n  skills   - list our tech stack\n  projects - list featured projects\n  contact  - get our contact info\n  clear    - clear terminal',
     about: 'Nexwe Solutions is a team of passionate developers dedicated to building modern web applications and solving real-world problems through technology. We work across the full stack — from responsive user interfaces to backend APIs, databases, and intelligent applications.',
-    skills: 'Frontend: React, JavaScript, HTML, CSS\nBackend: Python, Django, REST APIs\nDatabase: MySQL, SQLite\nAI: NLP, Scikit-learn',
-    projects: '1. E-Commerce Web Application\n2. AI Customer Support Chatbot\nScroll up to view the full case studies.',
+    skills: 'Frontend: React, TypeScript, JavaScript, Tailwind CSS, HTML/CSS\nBackend: Node.js, Express.js, Python, Django, REST APIs\nDatabase: MySQL, SQLite, PostgreSQL\nAI: NLP, Scikit-learn',
+    projects: '1. Cravo Kitchen & Bar (https://cravo-two.vercel.app)\n2. E-Commerce Web Application\n3. AI Customer Support Chatbot\nScroll to the Projects section to explore interactive case studies & live demos.',
     contact: 'Email: nexwesolutions@gmail.com\nPhone: +91 6379833975',
   };
 

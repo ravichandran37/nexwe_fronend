@@ -5,7 +5,6 @@ import Hero from '../components/Hero/Hero';
 import Marquee from '../components/Marquee/Marquee';
 import InteractiveTerminal from '../components/Terminal/InteractiveTerminal';
 import WhyUs from '../components/WhyUs/WhyUs';
-import Testimonials from '../components/Testimonials/Testimonials';
 import SEO from '../components/SEO/SEO';
 import { pageSeoData } from '../config/seoConfig';
 
@@ -107,8 +106,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* What Our Clients Say - Testimonial Section */}
-      <Testimonials />
     </div>
   );
 };

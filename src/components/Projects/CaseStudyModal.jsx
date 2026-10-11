@@ -34,7 +34,9 @@ const CaseStudyModal = ({ project, onClose }) => {
     onClose();
     openScheduleModal({
       projectTitle: project.title,
-      service: project.title.toLowerCase().includes('cravo') || project.title.toLowerCase().includes('restaurant')
+      service: project.title.toLowerCase().includes('kanso') || project.title.toLowerCase().includes('interior')
+        ? 'Luxury Interior Architecture & Spatial Platform'
+        : project.title.toLowerCase().includes('cravo') || project.title.toLowerCase().includes('restaurant')
         ? 'Full-Stack Restaurant & Ordering Platform'
         : project.title.toLowerCase().includes('aura') || project.title.toLowerCase().includes('fashion')
         ? 'Luxury E-Commerce & Brand Platform'

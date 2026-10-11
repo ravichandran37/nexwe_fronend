@@ -74,7 +74,31 @@ export const projects = [
   {
     id: 4,
     number: "04",
-    editorialLabel: "04 // E-COMMERCE",
+    editorialLabel: "04 // LUXURY ARCHITECTURE",
+    title: "STUDIO KANSO",
+    image: "/projects/studiokanso.jpg",
+    liveUrl: "https://studio-kanso.vercel.app/",
+    features: [
+      "Tactile Material Explorer",
+      "Interactive Project Lightbox",
+      "Headless Sanity CMS & Resend"
+    ],
+    badges: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4", "GSAP 3", "Sanity CMS", "Resend API", "Zod"],
+    caseStudy: {
+      overview: "Studio Kanso is a bespoke, production-ready digital atelier engineered for a luxury interior architecture and spatial design studio. Founded on wabi-sabi modernism and tactile materiality, the platform features dynamic architectural reveals, a tactile material explorer, interactive commission case studies with accessible lightboxes, headless Sanity Studio content synchronization, and server-validated consultation dispatch.",
+      problem: "High-end architectural ateliers require digital experiences that mirror the tactile, restrained luxury of physical spaces. Standard website templates rely on generic grids, lack visceral typography, fail to highlight material provenance (travertine, slaked lime, smoked oak), and lack robust headless CMS workflows for architectural portfolios.",
+      solution: "Engineered an editorial, high-performance web experience leveraging Next.js App Router, React 19, and Tailwind CSS v4 paired with Cormorant Garamond and Manrope typography. Integrated GSAP 3 scroll animations, an interactive Materiality Explorer, before/after renovation sliders, dual-mode embedded demo datasets with headless Sanity Studio, and server-validated consultation inquiries via Resend.",
+      features: "Architectural hero with clip-path reveal, interactive portfolio filtering (Residential, Commercial, Hospitality, Villas, Apartments), full commission case studies with finish schedules & before/after sliders, Tactile Material Explorer, pinned 4-phase process sequence, Sanity Studio mounted at /cms, sliding-window rate limiting, and WhatsApp direct studio chat generation.",
+      architecture: "Modern full-stack SSR/SSG architecture built with Next.js 16 App Router, React 19, TypeScript, and Tailwind CSS v4. Content orchestration is backed by Sanity CMS schemas with automatic high-fidelity fallback to embedded demo content. API routes enforce strict Zod validation, honeypot spam protection, and transactional notification dispatch via Resend.",
+      technologies: "Next.js 16, React 19, TypeScript, Tailwind CSS v4, GSAP 3, Sanity CMS, Resend, React Hook Form, Zod, Cormorant Garamond, Vercel.",
+      challenges: "Balancing rich full-bleed imagery and buttery 60fps GSAP kinetic scroll interactions with strict Core Web Vitals, sub-second initial load times, and ensuring zero mock stub artifacts during offline or Sanity API transitions.",
+      result: "Deployed live to production at studio-kanso.vercel.app with immaculate responsive performance, establishing a benchmark digital presence for luxury interior architecture and bespoke spatial design."
+    }
+  },
+  {
+    id: 5,
+    number: "05",
+    editorialLabel: "05 // E-COMMERCE",
     title: "E-COMMERCE PLATFORM",
     image: "/projects/ecommerce.jpg",
     liveUrl: "https://cravo-two.vercel.app",
@@ -96,9 +120,9 @@ export const projects = [
     }
   },
   {
-    id: 5,
-    number: "05",
-    editorialLabel: "05 // AI & AUTOMATION",
+    id: 6,
+    number: "06",
+    editorialLabel: "06 // AI & AUTOMATION",
     title: "AI CUSTOMER SUPPORT CHATBOT",
     image: "/projects/chatbot.jpg",
     liveUrl: "https://cravo-two.vercel.app",

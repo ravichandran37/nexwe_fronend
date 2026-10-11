@@ -30,9 +30,9 @@ export const pageSeoData = {
   },
   projects: {
     title: "Portfolio & Case Studies | Nexwe Solutions Software Agency",
-    description: "Explore full-stack web applications, restaurant ordering platforms, e-commerce systems, and AI chatbot case studies built with React, Node.js, Python, Django, and modern cloud architecture by Nexwe.",
+    description: "Explore bespoke luxury interior platforms, restaurant ordering systems, B2B export portals, luxury streetwear e-commerce, and AI chatbot case studies built by Nexwe.",
     canonical: "https://nexwe.in/projects",
-    keywords: "nexwe portfolio, cravo kitchen and bar, restaurant ordering system, full stack project case studies, python django projects, react web app showcase, ai chatbot development"
+    keywords: "nexwe portfolio, studio kanso luxury interior architecture, cravo kitchen and bar, catchy exports b2b portal, aura luxury streetwear, restaurant ordering system, full stack project case studies, python django projects, react web app showcase"
   },
   services: {
     title: "Software Engineering Services | Web, Mobile & Security | Nexwe",
